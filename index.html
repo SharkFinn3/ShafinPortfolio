@@ -60,10 +60,23 @@
 }
 
 .header-title {
-  font-size: 100px; /* Adjust the font size as desired */
-  font-family: "Lucida Console", Courier, monospace; /* Replace with the desired font family */
-  margin-right: 100px; /* Adjust the spacing between the title and image */
+  font-size: 100px;
+  font-family: "Roboto", sans-serif;
+  margin-right: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 3s steps(15, end) infinite;
 }
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 
 .about-me-photo {
   width: 300px; /* Adjust the size of the circular container */
@@ -235,6 +248,12 @@ document.getElementById("email").addEventListener("click", function() {
     alert("Email address copied to clipboard!");
   });
 });
+const nameElement = document.querySelector('.header-title');
+const name = "Shafin Alam";
+
+// Set the name as the text content of the header title
+nameElement.textContent = name;
+
   </script>
 </body>
 </html>
