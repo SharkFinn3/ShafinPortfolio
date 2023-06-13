@@ -106,7 +106,16 @@
   margin-right: 20px;
   white-space: nowrap;
   overflow: hidden;
-  animation: typing-text 6s infinite;
+  animation: typing-backspace 3s infinite;
+}
+
+@keyframes typing-backspace {
+  0%, 80% {
+    width: 0;
+  }
+  20%, 100% {
+    width: 100%;
+  }
 }
 
 .about-me-photo {
