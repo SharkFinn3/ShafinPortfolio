@@ -49,6 +49,54 @@
       padding: 20px;
       text-align: center;
     }
+.header-container {
+  display: flex;
+  justify-content: center;
+}
+
+.header-center {
+  display: flex;
+  align-items: center;
+}
+
+.text-container {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.header-title {
+  font-size: 100px;
+  font-family: "Lucida Console", Courier, monospace;
+  margin-right: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing-backspace 3s infinite;
+}
+
+@keyframes typing-backspace {
+  0%, 80% {
+    width: 0;
+  }
+  20%, 100% {
+    width: 100%;
+  }
+}
+
+.about-me-photo {
+  width: 300px; /* Adjust the size of the circular container */
+  height: 300px; /* Adjust the size of the circular container */
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.about-me-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
 #toggle-button {
   padding: 10px 20px;
   font-size: 16px;
@@ -96,53 +144,6 @@
     <li style="display: inline-block; margin-right: 10px;"><a href="#contact" style="text-decoration: none; color: white; font-size: 18px;">Contact</a></li>
   </ul>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-  <style>.header-container {
-  display: flex;
-  justify-content: center;
-}
-
-.header-center {
-  display: flex;
-  align-items: center;
-}
-
-.text-container {
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.header-title {
-  font-size: 100px;
-  font-family: "Lucida Console", Courier, monospace;
-  margin-right: 20px;
-  white-space: nowrap;
-  overflow: hidden;
-  animation: typing-backspace 3s infinite;
-}
-
-@keyframes typing-backspace {
-  0%, 80% {
-    width: 0;
-  }
-  20%, 100% {
-    width: 100%;
-  }
-}
-
-.about-me-photo {
-  width: 300px; /* Adjust the size of the circular container */
-  height: 300px; /* Adjust the size of the circular container */
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-.about-me-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-</style>
 </header>
 
   
