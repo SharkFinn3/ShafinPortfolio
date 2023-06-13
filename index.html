@@ -11,32 +11,44 @@
     }
     
     header {
-      background-color: #0b99b3;
-      color: #fff;
-      padding: 40px;
-      text-align: left;
-    }
-    
-    h1 {
-      margin: 0;
-    }
-    
-    nav {
-      background-color: #0b99b3;
-      padding: 10px;
-      text-align: right;
-    }
-    
-    nav ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
-    
-    nav ul li {
-      display: inline-block;
-      margin: 0 10px;
-    }
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0b99b3;
+    color: #fff;
+    padding: 40px;
+    text-align: left;
+    z-index: 999; /* Ensure the header appears above other elements */
+  }
+
+  /* Remove margin from h1 */
+  h1 {
+    margin: 0;
+  }
+
+  /* Additional styles for the header links */
+  header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+  }
+
+  header li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  header li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+  }
+
+  header li a:hover {
+    color: #ccc;
+  }
     
     .content {
       padding: 20px;
