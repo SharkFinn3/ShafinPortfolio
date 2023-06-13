@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Portfolio</title>
+  <style>
+    /* CSS styles for the page */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    header {
+      background-color: #0b99b3;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    h1 {
+      margin: 0;
+    }
+    
+    nav {
+      background-color: #f4f4f4;
+      padding: 10px;
+      text-align: center;
+    }
+    
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    nav ul li {
+      display: inline-block;
+      margin: 0 10px;
+    }
+    
+    .content {
+      padding: 20px;
+      text-align: center;
+    }
+    
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    .about-me-photo {
+  flex: 0;
+  margin-left: 20px;
+}
+
+.about-me-photo img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+#toggle-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#toggle-button:hover {
+  background-color: #1976D2;
+}
+#email[title]::after {
+  content: attr(title);
+  position: absolute;
+  background-color: #000;
+  color: #fff;
+  padding: 5px;
+  font-size: 12px;
+  border-radius: 5px;
+  left: calc(100% + 5px);
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+#email:hover[title]::after {
+  opacity: 1;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Shafin Alam</h1>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+  </header>
+  
+  <nav>
+    <!-- Navigation links -->
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#resume">Resume</a></li>
+    </ul>
+  </nav>
+  
+  <div id="home" class="content">
+    <h2>Welcome to My Portfolio</h2>
+    <p>This is a showcase of my work and skills.</p>
+  </div>
+  
+  <div id="about" class="content">
+    <h2>Shafin Alam</h2>
+    <div class="about-me-photo">
+      <img src="C:\Users\alams\Downloads\senior sunday.png" alt="Shafin Alam">
+    </div>
+    <h2>About Me</h2>
+    <p>I am an aspiring software engineering intern with a strong passion for building innovative and impactful applications. Currently, I am pursuing a degree in Computer Science and have a solid foundation in programming languages such as Java, Python, and JavaScript.</p>
+  
+  <p>Throughout my academic journey, I have gained experience in various software development concepts, including data structures, algorithms, and object-oriented programming. I am enthusiastic about using my skills and knowledge to contribute to real-world projects and further develop my expertise in software engineering.</p>
+  
+  <p>In my free time, I enjoy exploring new technologies and working on personal coding projects to enhance my problem-solving abilities. I am a quick learner and thrive in collaborative environments where I can contribute my ideas and learn from experienced professionals.</p>
+  
+  <p>I am actively seeking internship opportunities where I can apply my technical skills, learn from industry experts, and make a meaningful impact. I am excited about the prospect of working with a dynamic team and contributing to the development of innovative software solutions.</p>
+</div>
+  
+  <div id="projects" class="content">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Project 1</h3>
+      <p>Description of Project 1.</p>
+      <p>Technologies used: HTML, CSS, JavaScript.</p>
+      <a href="path/to/project1.exe" download>Download Project</a> | <a href="https://github.com/yourusername/project1">GitHub Repository</a>
+    </div>
+    
+    <div class="project">
+      <h3>Project 2</h3>
+      <p>Description of Project 2.</p>
+      <p>Technologies used: Python, Django, PostgreSQL.</p>
+      <a href="path/to/project2.docx" download>Download Project</a> | <a href="https://github.com/yourusername/project2">GitHub Repository</a>
+    </div>
+    
+    <!-- Add more project sections as needed -->
+    
+  </div>
+  
+  <div id="resume" class="content">
+    <h2>Resume</h2>
+    <p>Click the button below to view my resume:</p>
+    <button id="toggle-button" onclick="toggleResume()">Toggle Resume</button>
+    <embed id="resume-embed" src="c:\Users\alams\Downloads\ShafinAlamResume.pdf" type="application/pdf" width="100%" height="600px" style="display: none;" />
+  </div>
+  
+  <div id="contact" class="content">
+    <h2>Contact Me</h2>
+    <p>
+      <i class="far fa-envelope"></i>
+      <span id="email" title="Copy Email">alamshafin3@gmail.com</span>
+    </p>
+    <p>
+      <a href="https://www.linkedin.com/in/shafin-alam-573134238/" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+    </p>
+    <p>
+      <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+    </p>
+  </div>
+  
+  <footer>
+    <p>&copy; 2023 My Portfolio. All rights reserved.</p>
+  </footer>
+  
+  <script>
+    // JavaScript for smooth scrolling effect
+    const navLinks = document.querySelectorAll('nav a');
+
+    navLinks.forEach((link) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        // Get the target section id from the link's href attribute
+        const targetId = link.getAttribute('href').substring(1);
+        // Find the target section element based on its id
+        const targetSection = document.getElementById(targetId);
+        // Scroll smoothly to the target section
+        window.scrollTo({
+          top: targetSection.offsetTop,
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    function toggleResume() {
+  var resumeEmbed = document.getElementById("resume-embed");
+  var toggleButton = document.getElementById("toggle-button");
+
+  if (resumeEmbed.style.display === "none") {
+    resumeEmbed.style.display = "block";
+    toggleButton.textContent = "Hide Resume";
+  } else {
+    resumeEmbed.style.display = "none";
+    toggleButton.textContent = "Show Resume";
+  }
+}
+document.getElementById("email").addEventListener("click", function() {
+  var emailText = this.innerText;
+  navigator.clipboard.writeText(emailText).then(function() {
+    alert("Email address copied to clipboard!");
+  });
+});
+
+
+  </script>
+</body>
+</html>
