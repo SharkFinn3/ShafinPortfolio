@@ -18,10 +18,6 @@
     cursor: pointer;
   }
   
-  h1 {
-    text-align: center; /* Added to center the title */
-  }
-  
   button {
     display: block; /* Added to make the button centered */
     margin: 0 auto; /* Added to center the button horizontally */
