@@ -58,27 +58,8 @@
   display: flex;
   align-items: center;
 }
-.text-container {
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-  vertical-align: middle;
-}
-
-.header-title {
-  font-size: 100px;
-  font-family: "Lucida Console", Courier, monospace;
-  margin-right: 20px;
-  white-space: nowrap;
-  overflow: hidden;
-  animation: typing-backspace 6s infinite;
-}
-
 @keyframes typing-backspace {
   0% {
-    width: 0;
-  }
-  10% {
     width: 100%;
   }
   20% {
@@ -87,7 +68,25 @@
   30% {
     width: 0;
   }
-  40% {
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes typing-text {
+  0% {
+    width: 0;
+  }
+  10% {
+    width: 0;
+  }
+  20% {
+    width: 100%;
+  }
+  80% {
+    width: 100%;
+  }
+  90% {
     width: 0;
   }
   100% {
@@ -95,14 +94,26 @@
   }
 }
 
+.text-container {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.header-title {
+  font-size: 100px;
+  font-family: "Lucida Console", Courier, monospace;
+  margin-right: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing-text 6s infinite;
+}
 
 .about-me-photo {
-  display: inline-block;
   width: 300px; /* Adjust the size of the circular container */
   height: 300px; /* Adjust the size of the circular container */
   border-radius: 50%;
   overflow: hidden;
-  vertical-align: middle;
 }
 
 .about-me-photo img {
@@ -110,6 +121,7 @@
   height: 100%;
   object-fit: cover;
 }
+
 
 #toggle-button {
   padding: 10px 20px;
@@ -269,37 +281,6 @@ document.getElementById("email").addEventListener("click", function() {
     alert("Email address copied to clipboard!");
   });
 });
-const nameElement = document.querySelector('.header-title');
-const name = "Shafin Alam";
-
-function animateName() {
-  nameElement.textContent = ''; // Clear existing content
-  let index = 0;
-  let isTyping = true;
-
-  setInterval(() => {
-    if (isTyping) {
-      nameElement.textContent += name[index];
-      index++;
-
-      if (index === name.length) {
-        isTyping = false;
-        setTimeout(() => {
-          isTyping = true;
-        }, 3000); // Delay before starting backspace animation
-      }
-    } else {
-      nameElement.textContent = nameElement.textContent.slice(0, -1);
-
-      if (nameElement.textContent === '') {
-        isTyping = true;
-        index = 0;
-      }
-    }
-  }, 150); // Typing speed (adjust as desired)
-}
-
-animateName();
 
   </script>
 </body>
