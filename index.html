@@ -49,13 +49,14 @@
       padding: 20px;
       text-align: center;
     }
-   .header-container {
+  .header-container {
   display: flex;
   align-items: center;
 }
 
 .header-left {
-  flex: 1;
+  flex-shrink: 0;
+  margin-right: 20px;
 }
 
 .header-title {
@@ -64,8 +65,9 @@
 }
 
 .header-right {
-  flex-shrink: 0;
-  margin-left: 20px;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .about-me-photo {
@@ -80,6 +82,7 @@
   height: 100%;
   object-fit: cover;
 }
+
 
 
 #toggle-button {
