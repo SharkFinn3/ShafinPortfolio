@@ -145,11 +145,22 @@
       height: 100%;
       object-fit: cover;
     }
-    /* Styles for the tic-tac-toe game link/button */
-/* Styles for the game container */
-.game-container {
-  margin-top: 20px;
-}
+  /* Styles for the game container */
+  .game-container {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      /* Styles for the embedded iframe */
+      .game-iframe {
+        width: 100%;
+        height: 100%;
+        max-width: 600px; /* Adjust the maximum width as needed */
+        max-height: 600px; /* Adjust the maximum height as needed */
+        border: none;
+      }
 
   </style>
 </head>
@@ -198,7 +209,7 @@
       <p>Implemented a simple web app for the popular game of TicTacToe.</p>
       <p>Technologies used: HTML, CSS, JavaScript.</p>
       <div class="game-container">
-        <iframe src="Assets/ticTacToe.html" frameborder="0" width="400" height="400"></iframe>
+        <iframe src="Assets/ticTacToe.html" class ="game-iframe" frameborder="0" width="400" height="400"></iframe>
       </div>
     </div>
     
