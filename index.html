@@ -146,19 +146,9 @@
       object-fit: cover;
     }
     /* Styles for the tic-tac-toe game link/button */
-.game-link {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #007bff;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 4px;
-  font-size: 18px;
+/* Styles for the game container */
+.game-container {
   margin-top: 20px;
-}
-
-.game-link:hover {
-  background-color: #0056b3;
 }
 
   </style>
@@ -207,7 +197,9 @@
       <h3>Tic-Tac-Toe</h3>
       <p>Implemented a simple web app for the popular game of TicTacToe.</p>
       <p>Technologies used: HTML, CSS, JavaScript.</p>
-      <a href="Assets/ticTacToe.html" class="game-link">Play Tic-Tac-Toe</a>
+      <div class="game-container">
+        <iframe src="ticTacToe.html" frameborder="0" width="400" height="400"></iframe>
+      </div>
     </div>
     
     <div class="project">
