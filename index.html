@@ -49,6 +49,40 @@
       padding: 20px;
       text-align: center;
     }
+#toggle-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#toggle-button:hover {
+  background-color: #1976D2;
+}
+#email[title]::after {
+  content: attr(title);
+  position: absolute;
+  background-color: #000;
+  color: #fff;
+  padding: 5px;
+  font-size: 12px;
+  border-radius: 5px;
+  left: calc(100% + 5px);
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+#email:hover[title]::after {
+  opacity: 1;
+}
 .header-container {
   display: flex;
   justify-content: center;
@@ -96,41 +130,6 @@
   object-fit: cover;
 }
 
-
-#toggle-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #2196F3;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-#toggle-button:hover {
-  background-color: #1976D2;
-}
-#email[title]::after {
-  content: attr(title);
-  position: absolute;
-  background-color: #000;
-  color: #fff;
-  padding: 5px;
-  font-size: 12px;
-  border-radius: 5px;
-  left: calc(100% + 5px);
-  top: 50%;
-  transform: translateY(-50%);
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s;
-}
-
-#email:hover[title]::after {
-  opacity: 1;
-}
 
   </style>
 </head>
