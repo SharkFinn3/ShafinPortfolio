@@ -80,7 +80,6 @@ function makeMove(row, col) {
 }
 
 // AI makes a move
-// AI makes a move
 function makeAIMove() {
   // Find available empty cells
   const emptyCells = [];
@@ -103,9 +102,10 @@ function makeAIMove() {
   } else if (isBoardFull()) {
     isGameOver = true;
     alert("It's a tie!");
+  } else {
+    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
   }
 
-  currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
   renderBoard();
 }
 
