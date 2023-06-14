@@ -80,24 +80,33 @@ function makeMove(row, col) {
 }
 
 // AI makes a move
+// AI makes a move
 function makeAIMove() {
-  // Find the first available empty cell and make a move
+  // Find available empty cells
+  const emptyCells = [];
   for (let i = 0; i < 3; i++) {
     for (let j = 0; j < 3; j++) {
       if (board[i][j] === '') {
-        board[i][j] = currentPlayer;
-        if (checkWin(currentPlayer)) {
-          isGameOver = true;
-          alert(`Player ${currentPlayer} wins!`);
-        } else if (isBoardFull()) {
-          isGameOver = true;
-          alert("It's a tie!");
-        }
-        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-        return;
+        emptyCells.push({ row: i, col: j });
       }
     }
   }
+
+  // Choose a random empty cell
+  const randomIndex = Math.floor(Math.random() * emptyCells.length);
+  const randomCell = emptyCells[randomIndex];
+  board[randomCell.row][randomCell.col] = currentPlayer;
+
+  if (checkWin(currentPlayer)) {
+    isGameOver = true;
+    alert(`Player ${currentPlayer} wins!`);
+  } else if (isBoardFull()) {
+    isGameOver = true;
+    alert("It's a tie!");
+  }
+
+  currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+  renderBoard();
 }
 
 // Render the board
