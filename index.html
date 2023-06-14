@@ -161,6 +161,19 @@
         height: 510px; /* Adjust the maximum height as needed */
         border: none;
       }
+      .project-image {
+  max-width: 300px; /* Adjust the maximum width as needed */
+}
+
+.project-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-links {
+  margin-top: 10px; /* Adjust the margin as needed */
+}
 
   </style>
 </head>
@@ -214,15 +227,17 @@
       </div>
     </div>
     
-    <div class="project">
-      <h3>NaturalNumber Calculator GUI</h3>
-      <p>Utilized Swing framework and components with model-view-controller design pattern to develop Java-based
-        calculator with graphical user interface, providing users an interface to perform operations on natural numbers</p>
-      <p>Implemented error handling and validation to provide users with informative messages with invalid input.</p>
-      <p>Technologies used: Java, Swing.</p>
-      <img src = "Assets/nngui.PNG" alt = "NaturalNumber Calculator GUI">
-      <a href="Assets/naturalNumberCalc.zip" download>Download Project</a> | <a href="https://github.com/SharkFinn3/CSE-2231/blob/main/naturalNumberCalc.zip">GitHub Repository</a>
+    <h3>NaturalNumber Calculator GUI</h3>
+  <p>Utilized Swing framework and components with model-view-controller design pattern to develop Java-based calculator with graphical user interface, providing users an interface to perform operations on natural numbers</p>
+  <p>Implemented error handling and validation to provide users with informative messages with invalid input.</p>
+  <p>Technologies used: Java, Swing.</p>
+  <div class="project-image-container">
+    <img src="Assets/nngui.PNG" alt="NaturalNumber Calculator GUI" class="project-image">
+    <div class="project-links">
+      <a href="Assets/naturalNumberCalc.zip" download>Download Project</a> |
+      <a href="https://github.com/SharkFinn3/CSE-2231/blob/main/naturalNumberCalc.zip">GitHub Repository</a>
     </div>
+  </div>
     
     <div class="project">
       <h3>Project 3</h3>
