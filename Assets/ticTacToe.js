@@ -1,135 +1,91 @@
-// Global Variables
-let board;
-let currentPlayer;
-let isGameOver;
+document.addEventListener('DOMContentLoaded', () => {
+  const cells = document.querySelectorAll('.cell');
+  const restartButton = document.getElementById('restart');
+  let currentPlayer = 'X';
+  let gameBoard = ['', '', '', '', '', '', '', '', ''];
+  let gameActive = true;
 
-// Initialize the board
-function initializeBoard() {
-  board = [
-    ['', '', ''],
-    ['', '', ''],
-    ['', '', '']
+  const winningCombinations = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
   ];
-  currentPlayer = 'X';
-  isGameOver = false;
-}
 
-// Check if the current player has won
-function checkWin(player) {
-  // Check rows
-  for (let i = 0; i < 3; i++) {
-    if (
-      board[i][0] === player &&
-      board[i][1] === player &&
-      board[i][2] === player
-    ) {
-      return true;
-    }
-  }
-
-  // Check columns
-  for (let i = 0; i < 3; i++) {
-    if (
-      board[0][i] === player &&
-      board[1][i] === player &&
-      board[2][i] === player
-    ) {
-      return true;
-    }
-  }
-
-  // Check diagonals
-  if (
-    (board[0][0] === player && board[1][1] === player && board[2][2] === player) ||
-    (board[0][2] === player && board[1][1] === player && board[2][0] === player)
-  ) {
-    return true;
-  }
-
-  return false;
-}
-
-// Check if the board is full
-function isBoardFull() {
-  for (let row of board) {
-    if (row.includes('')) {
-      return false;
-    }
-  }
-  return true;
-}
-
-// Make a move
-function makeMove(row, col) {
-  if (board[row][col] === '' && !isGameOver) {
-    board[row][col] = currentPlayer;
-    if (checkWin(currentPlayer)) {
-      isGameOver = true;
-      alert(`Player ${currentPlayer} wins!`);
-    } else if (isBoardFull()) {
-      isGameOver = true;
-      alert("It's a tie!");
-    } else {
-      currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-      if (currentPlayer === 'O') {
-        makeAIMove();
+  const handleCellClick = (e) => {
+    const cell = e.target;
+    const cellIndex = parseInt(cell.id.replace('cell-', ''));
+    if (gameBoard[cellIndex] === '' && gameActive) {
+      cell.textContent = currentPlayer;
+      gameBoard[cellIndex] = currentPlayer;
+      checkResult();
+      if (gameActive) {
+        makeComputerMove();
       }
     }
-    renderBoard();
-  }
-}
+  };
 
-// AI makes a move
-function makeAIMove() {
-  // Find available empty cells
-  const emptyCells = [];
-  for (let i = 0; i < 3; i++) {
-    for (let j = 0; j < 3; j++) {
-      if (board[i][j] === '') {
-        emptyCells.push({ row: i, col: j });
+  const makeComputerMove = () => {
+    const emptyCells = [];
+    for (let i = 0; i < gameBoard.length; i++) {
+      if (gameBoard[i] === '') {
+        emptyCells.push(i);
       }
     }
-  }
+    const randomIndex = Math.floor(Math.random() * emptyCells.length);
+    const randomCellIndex = emptyCells[randomIndex];
+    gameBoard[randomCellIndex] = currentPlayer === 'X' ? 'O' : 'X';
+    cells[randomCellIndex].textContent = currentPlayer === 'X' ? 'O' : 'X';
+    checkResult();
+  };
 
-  // Choose a random empty cell
-  const randomIndex = Math.floor(Math.random() * emptyCells.length);
-  const randomCell = emptyCells[randomIndex];
-  board[randomCell.row][randomCell.col] = currentPlayer;
-
-  if (checkWin(currentPlayer)) {
-    isGameOver = true;
-    alert(`Player ${currentPlayer} wins!`);
-  } else if (isBoardFull()) {
-    isGameOver = true;
-    alert("It's a tie!");
-  } else {
-    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-  }
-
-  renderBoard();
-}
-
-// Render the board
-function renderBoard() {
-  const boardContainer = document.getElementById('board-container');
-  boardContainer.innerHTML = '';
-
-  for (let i = 0; i < 3; i++) {
-    for (let j = 0; j < 3; j++) {
-      const cell = document.createElement('div');
-      cell.className = 'cell';
-      cell.textContent = board[i][j];
-      cell.addEventListener('click', () => makeMove(i, j));
-      boardContainer.appendChild(cell);
+  const checkResult = () => {
+    for (let i = 0; i < winningCombinations.length; i++) {
+      const [a, b, c] = winningCombinations[i];
+      if (
+        gameBoard[a] &&
+        gameBoard[a] === gameBoard[b] &&
+        gameBoard[a] === gameBoard[c]
+      ) {
+        announceResult(`${gameBoard[a]} wins!`);
+        gameActive = false;
+        return;
+      }
     }
-  }
-}
 
-// Initialize the game
-function init() {
-  initializeBoard();
-  renderBoard();
-}
+    if (!gameBoard.includes('')) {
+      announceResult("It's a tie!");
+      gameActive = false;
+      return;
+    }
+  };
 
-// Start the game
-init();
+  const announceResult = (message) => {
+    const resultMessage = document.createElement('p');
+    resultMessage.textContent = message;
+    document.body.appendChild(resultMessage);
+  };
+
+  const handleRestart = () => {
+    currentPlayer = 'X';
+    gameBoard = ['', '', '', '', '', '', '', '', ''];
+    gameActive = true;
+    cells.forEach((cell) => {
+      cell.textContent = '';
+    });
+    const resultMessage = document.querySelector('p');
+    if (resultMessage) {
+      resultMessage.remove();
+    }
+  };
+
+  cells.forEach((cell) => {
+    cell.addEventListener('click', handleCellClick);
+  });
+
+  restartButton.addEventListener('click', handleRestart);
+});
