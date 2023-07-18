@@ -169,3 +169,13 @@ align-items: center;
 .project-links {
 margin-top: 10px; /* Adjust the margin as needed */
 }
+/* Define the styling for the content container */
+.content-container {
+    max-width: 800px; /* Set a maximum width for the container */
+    margin: 0 auto; /* Center the container horizontally on the page */
+    padding: 20px; /* Add some space around the content */
+    border: 1px solid #ccc; /* Optional: Add a border for visual distinction */
+    background-color: #f0f0f0; /* Optional: Set a background color */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+  }
+  
