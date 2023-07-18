@@ -1,0 +1,171 @@
+/* CSS styles for my page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0b99b3;
+  color: #fff;
+  padding: 40px;
+  text-align: left;
+  z-index: 999; /* Ensure the header appears above other elements */
+}
+
+/* Remove margin from h1 */
+h1 {
+  margin: 0;
+}
+
+/* Additional styles for the header links */
+header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+header li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+header li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+}
+
+header li a:hover {
+  color: #ccc;
+}
+  .top{
+    padding-top: 150px;
+    padding-bottom: 20px;
+    text-align: center;
+  }
+  .content {
+    padding: 50px;
+    text-align: center;
+  }
+  
+  footer {
+    background-color: rgb(14, 167, 187);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+#toggle-button {
+padding: 10px 20px;
+font-size: 16px;
+background-color: #2196F3;
+color: white;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+#toggle-button:hover {
+background-color: #1976D2;
+}
+#email[title]::after {
+content: attr(title);
+position: absolute;
+background-color: #000;
+color: #fff;
+padding: 5px;
+font-size: 12px;
+border-radius: 5px;
+left: calc(100% + 5px);
+top: 50%;
+transform: translateY(-50%);
+white-space: nowrap;
+opacity: 0;
+pointer-events: none;
+transition: opacity 0.3s;
+}
+
+#email:hover[title]::after {
+opacity: 1;
+}
+.header-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .header-center {
+    display: flex;
+    align-items: center;
+  }
+
+  .text-container {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .header-title {
+    font-size: 100px;
+    font-family: "Lucida Console", Courier, monospace;
+    margin-right: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing-backspace 15s infinite;
+  }
+
+  @keyframes typing-backspace {
+    0%, 40%, 100% {
+      width: 0;
+    }
+    20%, 80% {
+      width: 100%;
+    }
+  }
+
+  .about-me-photo {
+    width: 300px; /* Adjust the size of the circular container */
+    height: 300px; /* Adjust the size of the circular container */
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .about-me-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+/* Styles for the game container */
+.game-container {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    /* Styles for the embedded iframe */
+    .game-iframe {
+      width: 100%;
+      height: 100%;
+      width: 500px; /* Adjust the maximum width as needed */
+      height: 510px; /* Adjust the maximum height as needed */
+      border: none;
+    }
+    .project-image {
+max-width: 300px; /* Adjust the maximum width as needed */
+}
+
+.project-image-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.project-links {
+margin-top: 10px; /* Adjust the margin as needed */
+}
