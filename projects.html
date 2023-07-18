@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Portfolio</title>
+  <title>My Projects</title>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js"></script>
 </head>
@@ -10,40 +10,13 @@
     <h1 style="color: white; display: inline-block; margin-right: 350px;"><a href="#about" style="text-decoration: none; color: inherit;">Shafin Alam</a></h1>
     <ul style="list-style-type: none; margin: 0; padding: 0; display: inline-block;">
       <li style="display: inline-block; margin-right: 10px;"><a href="#about" style="text-decoration: none; color: white; font-size: 18px;">Home</a></li>
-      <li style="display: inline-block; margin-right: 10px;"><a href="projects.html" style="text-decoration: none; color: white; font-size: 18px;">Projects</a></li>
+      <li style="display: inline-block; margin-right: 10px;"><a href="#projects" style="text-decoration: none; color: white; font-size: 18px;">Projects</a></li>
       <li style="display: inline-block; margin-right: 10px; border: 2px solid white; padding: 5px 10px;"><a href="#resume" style="text-decoration: none; color: white; font-size: 18px;">Resume</a></li>
       <li style="display: inline-block; margin-right: 10px;"><a href="#contact" style="text-decoration: none; color: white; font-size: 18px;">Contact</a></li>
     </ul>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   </header>
-
-  <div id="about" class="top">
-    <div class="header-container">
-      <div class="header-center">
-        <div class="text-container">
-          <h1 class="header-title">Shafin Alam</h1>
-        </div>
-        <div class="about-me-photo">
-          <img src="Assets/senior sunday.png" alt="Shafin Alam">
-        </div>
-      </div>
-    </div>
-    <h2>About Me</h2>
-    <p>Hello! My name is Shafin Alam. I am a 4th year Bangladeshi-American at The Ohio State University, graduating in May 2024. </p>
-    <p>I am an aspiring software engineering intern with a strong passion for building innovative and impactful applications. </p>
-    <p>Currently, I am pursuing a degree in Computer Science and Engineering and have a solid foundation in programming languages such as Java, Python, JavaScript, C/C++, MATLAB, SQL, Ruby, and HTML.</p>
-  
-  <p>Throughout my academic journey, I have gained experience in various software development concepts, including data structures, algorithms, and object-oriented programming. </p> 
-  <p>I am enthusiastic about using my skills and knowledge to contribute to real-world projects and further develop my expertise in software engineering.</p>
-
-  <p>In my free time, I enjoy exploring new technologies and working on personal coding projects to enhance my problem-solving abilities. </p>
-  <p>I am a quick learner and thrive in collaborative environments where I can contribute my ideas and learn from experienced professionals.</p>
-  
-  <p>I am actively seeking internship opportunities where I can apply my technical skills, learn from industry experts, and make a meaningful impact. </p>
-  <p>I am excited about the prospect of working with a dynamic team and contributing to the development of innovative software solutions.</p>
-</div>
-  
-  <!-- <div id="projects" class="content">
+  <div id="projects" class="content">
     <h2>Projects</h2>
     <div class="project">
       <h3>Tic-Tac-Toe</h3>
@@ -114,74 +87,8 @@
     <!-- Add more project sections as needed -->
     
   </div>
-  
-  <div id="resume" class="content">
-    <h2>Resume</h2>
-    <p>Click the button below to view my resume:</p>
-    <button id="toggle-button" onclick="toggleResume()">Click to Show Resume</button>
-    <embed id="resume-embed" src="Assets/ShafinAlamResume.pdf" type="application/pdf" width="100%" height="600px" style="display: none;" />
-  </div>
-  
-  <div id="contact" class="content">
-    <h2>Contact Me</h2>
-    <p>
-      <i class="far fa-envelope"></i>
-      <span id="email" title="Click to Copy Email">alamshafin3@gmail.com</span>
-    </p>
-    <p>
-      <a href="https://www.linkedin.com/in/shafin-alam-573134238/" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-linkedin"></i> LinkedIn
-      </a>
-    </p>
-    <p>
-      <a href="https://github.com/SharkFinn3" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-github"></i> GitHub
-      </a>
-    </p>
-  </div> -->
-  
   <footer>
     <p>&copy; 2023 My Portfolio. All rights reserved.</p>
   </footer>
-  
-  <!-- <script>
-    // JavaScript for smooth scrolling effect
-    const navLinks = document.querySelectorAll('nav a');
-
-    navLinks.forEach((link) => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        // Get the target section id from the link's href attribute
-        const targetId = link.getAttribute('href').substring(1);
-        // Find the target section element based on its id
-        const targetSection = document.getElementById(targetId);
-        // Scroll smoothly to the target section
-        window.scrollTo({
-          top: targetSection.offsetTop,
-          behavior: 'smooth'
-        });
-      });
-    });
-
-    function toggleResume() {
-  var resumeEmbed = document.getElementById("resume-embed");
-  var toggleButton = document.getElementById("toggle-button");
-
-  if (resumeEmbed.style.display === "none") {
-    resumeEmbed.style.display = "block";
-    toggleButton.textContent = "Hide Resume";
-  } else {
-    resumeEmbed.style.display = "none";
-    toggleButton.textContent = "Show Resume";
-  }
-}
-document.getElementById("email").addEventListener("click", function() {
-  var emailText = this.innerText;
-  navigator.clipboard.writeText(emailText).then(function() {
-    alert("Email address copied to clipboard!");
-  });
-});
-
-  </script> -->
 </body>
 </html>
